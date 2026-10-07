@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OSINT Checker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>OSINT Checker</h1>
+  <p>Введите найденные координаты: <code>широта, долгота</code></p>
+  <form id="f" autocomplete="off">
+    <input id="c" name="coords" placeholder="00.000000, 00.000000" required maxlength="64" autofocus>
+    <button id="b" type="submit">Проверить</button>
+  </form>
+  <p id="r" role="status"></p>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+.env
+checker
+*.tar.gz
+*.log

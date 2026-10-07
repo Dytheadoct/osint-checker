@@ -1,0 +1,20 @@
+services:
+  checker:
+    build: .
+    image: osint-checker:latest
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      GOMEMLIMIT: 24MiB
+    ports:
+      - "${PUBLIC_PORT:-8080}:8080"
+    read_only: true
+    cap_drop: [ALL]
+    mem_limit: 32m
+    pids_limit: 64
+    cpus: 0.5
+    healthcheck:
+      test: ["CMD", "/checker", "-healthcheck"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
